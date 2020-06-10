@@ -4,6 +4,24 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
+             xmlns:views="clr-namespace:SampleShellNav"
              x:Class="SampleShellNav.AppShell">
+
+    <FlyoutItem Title="List Sample" FlyoutDisplayOptions="AsMultipleItems">
+        <Tab Title="Tab Menu">
+            <ShellContent Title="Home">
+                <views:MainPage />
+            </ShellContent>
+            <ShellContent Title="Image Cell">
+                <views:TampilList />
+            </ShellContent>
+        </Tab>
+        <ShellContent Title="Home">
+            <views:MainPage />
+        </ShellContent>
+        <ShellContent Title="Tampil List">
+            <views:TampilList />
+        </ShellContent>
+    </FlyoutItem>
 
 </Shell>
