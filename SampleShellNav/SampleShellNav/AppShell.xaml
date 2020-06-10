@@ -19,8 +19,8 @@
         <ShellContent Title="Home">
             <views:MainPage />
         </ShellContent>
-        <ShellContent Title="Tampil List">
-            <views:TampilList />
+        <ShellContent Title="Add Employee">
+            <views:AddEmployeePage />
         </ShellContent>
     </FlyoutItem>
 

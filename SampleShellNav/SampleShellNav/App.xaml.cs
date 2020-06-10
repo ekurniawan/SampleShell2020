@@ -6,6 +6,18 @@ namespace SampleShellNav
 {
     public partial class App : Application
     {
+        private static DataAccess dbUtils;
+        public static DataAccess DBUtils
+        {
+            get {
+                if (dbUtils == null)
+                {
+                    dbUtils = new DataAccess();
+                }
+                return dbUtils;
+            }
+        }
+
         public App()
         {
             InitializeComponent();
