@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="SampleShellNav.ShowEmployee">
+    <ContentPage.Content>
+        <StackLayout>
+            <ListView x:Name="lvEmployee" HasUnevenRows="True" Header="Employee">
+                <ListView.HeaderTemplate>
+                    <DataTemplate>
+                        <StackLayout Orientation="Horizontal" BackgroundColor="Blue" Padding="5,5,5,5">
+                            <Label Text="Emp Name" FontSize="Medium" FontAttributes="Bold" TextColor="White"/>
+                            <Label Text="Designation" FontSize="Medium" FontAttributes="Bold" TextColor="White"/>
+                            <Label Text="Department" FontSize="Medium" FontAttributes="Bold" TextColor="White"/>
+                            <Label Text="Qualification" FontSize="Medium" FontAttributes="Bold" TextColor="White"/>
+                            <Label Text="Birtdate" FontSize="Medium" FontAttributes="Bold" TextColor="White"/>
+                        </StackLayout>
+                    </DataTemplate>
+                </ListView.HeaderTemplate>
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
