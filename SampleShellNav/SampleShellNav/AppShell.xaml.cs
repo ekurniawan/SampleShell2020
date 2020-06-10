@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-//
+//shell
 namespace SampleShellNav
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
