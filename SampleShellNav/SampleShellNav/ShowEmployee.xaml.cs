@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SampleShellNav.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -27,6 +28,16 @@ namespace SampleShellNav
             await Navigation.PushAsync(new AddEmployeePage());
         }
 
-       
+        private async void lvEmployee_ItemSelected(object sender, SelectedItemChangedEventArgs e)
+        {
+            if (e.SelectedItem == null)
+                return;
+
+            var empDetail = (Employee)e.SelectedItem;
+
+            EditEmployee editEmp = new EditEmployee();
+            editEmp.BindingContext = empDetail;
+            await Navigation.PushAsync(editEmp);
+        }
     }
 }
