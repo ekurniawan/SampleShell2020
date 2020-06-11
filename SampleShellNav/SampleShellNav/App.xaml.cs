@@ -22,7 +22,8 @@ namespace SampleShellNav
         {
             InitializeComponent();
 
-            MainPage = new AppShell();
+            //MainPage = new AppShell();
+            MainPage = new AddEmployeePage();
         }
 
         protected override void OnStart()
