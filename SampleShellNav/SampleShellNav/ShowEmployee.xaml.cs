@@ -16,5 +16,15 @@ namespace SampleShellNav
         {
             InitializeComponent();
         }
+
+        protected override void OnAppearing()
+        {
+            lvEmployee.ItemsSource = App.DBUtils.GetAllEmployee();
+        }
+
+        private async void btnAdd_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new AddEmployeePage());
+        }
     }
 }
