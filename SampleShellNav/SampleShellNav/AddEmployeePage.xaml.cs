@@ -33,6 +33,7 @@ namespace SampleShellNav
             {
                 App.DBUtils.InsertEmployee(newEmp);
                 await DisplayAlert("Keterangan", $"Data {newEmp.EmpName} berhasil ditambahkan", "OK");
+                await Navigation.PopAsync();
             }
             catch (Exception ex)
             {

@@ -7,7 +7,7 @@
              x:Class="SampleShellNav.ShowEmployee">
     <ContentPage.Content>
         <StackLayout>
-            <ListView x:Name="lvEmployee" HasUnevenRows="True" Header="Employee">
+            <ListView x:Name="lvEmployee" HasUnevenRows="True" Header="Employee" Footer="Footer">
                 <ListView.HeaderTemplate>
                     <DataTemplate>
                         <StackLayout Orientation="Horizontal" BackgroundColor="Blue" Padding="5,5,5,5">
