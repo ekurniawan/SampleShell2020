@@ -15,15 +15,30 @@
                             <Label Text="Designation" FontSize="Medium" FontAttributes="Bold" TextColor="White"/>
                             <Label Text="Department" FontSize="Medium" FontAttributes="Bold" TextColor="White"/>
                             <Label Text="Qualification" FontSize="Medium" FontAttributes="Bold" TextColor="White"/>
-                            <Label Text="Birtdate" FontSize="Medium" FontAttributes="Bold" TextColor="White"/>
+                            <Label Text="Birthdate" FontSize="Medium" FontAttributes="Bold" TextColor="White"/>
                         </StackLayout>
                     </DataTemplate>
                 </ListView.HeaderTemplate>
                 <ListView.ItemTemplate>
                     <DataTemplate>
-                        
+                        <ViewCell>
+                            <StackLayout Orientation="Horizontal" Padding="5,5,5,5">
+                                <Label Text="{Binding EmpName}" FontSize="Medium" />
+                                <Label Text="{Binding Designation}" FontSize="Medium" />
+                                <Label Text="{Binding Department}" FontSize="Medium" />
+                                <Label Text="{Binding Qualification}" FontSize="Medium" />
+                                <Label Text="{Binding BirthDate}" FontSize="Medium" />
+                            </StackLayout>
+                        </ViewCell>
                     </DataTemplate>
                 </ListView.ItemTemplate>
+                <ListView.FooterTemplate>
+                    <DataTemplate>
+                        <StackLayout Orientation="Horizontal" Padding="5,5,5,5">
+                            
+                        </StackLayout>
+                    </DataTemplate>
+                </ListView.FooterTemplate>
             </ListView>
         </StackLayout>
     </ContentPage.Content>
