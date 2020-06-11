@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="SampleShellNav.EditEmployee">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Employee ID :" />
+            <Entry x:Name="entryEmpID" Keyboard="Text" Text="{Binding EmpId}" IsReadOnly="True" />
+            <Label Text="Employee Name :" />
+            <Entry x:Name="entryEmpName" Keyboard="Text" Text="{Binding EmpName}" />
+            <Label Text="Designation :" />
+            <Entry x:Name="entryDesignation" Keyboard="Text" Text="{Binding Designation}" />
+            <Label Text="Department :" />
+            <Entry x:Name="entryDepartment" Keyboard="Text" Text="{Binding Department}" />
+            <Label Text="Qualification :" />
+            <Entry x:Name="entryQualification" Keyboard="Text" Text="{Binding Qualification}" />
+            <Label Text="Birthdate :" />
+            <DatePicker x:Name="dtBirthdate" Date="{Binding BirthDate}" />
+            <StackLayout Orientation="Horizontal">
+                <Button x:Name="btnUpdate" Text="Update" />
+                <Button x:Name="btnDelete" Text="Delete" />
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -26,5 +26,7 @@ namespace SampleShellNav
         {
             await Navigation.PushAsync(new AddEmployeePage());
         }
+
+       
     }
 }
