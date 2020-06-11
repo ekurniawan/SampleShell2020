@@ -41,9 +41,27 @@ namespace SampleShellNav
             }
         }
 
-        private void btnDelete_Clicked(object sender, EventArgs e)
+        private async void btnDelete_Clicked(object sender, EventArgs e)
         {
-
+            var isDelete = await DisplayAlert("Konfirmasi", "Apakah data akan di delete?",
+                "Yes", "No");
+            if (isDelete)
+            {
+                try
+                {
+                    var deleteEmp = new Employee
+                    {
+                        EmpId = Convert.ToInt32(entryEmpID.Text)
+                    };
+                    App.DBUtils.DeleteEmployee(deleteEmp);
+                    await DisplayAlert("Keterangan", "Berhasil Di Delete", "OK");
+                    await Navigation.PopAsync();
+                }
+                catch (Exception ex)
+                {
+                    await DisplayAlert("Error", $"Kesalahan: {ex.Message}","OK");
+                }
+            }
         }
     }
 }
