@@ -20,8 +20,8 @@
             <Label Text="Birthdate :" />
             <DatePicker x:Name="dtBirthdate" Date="{Binding BirthDate}" />
             <StackLayout Orientation="Horizontal">
-                <Button x:Name="btnUpdate" Text="Update" />
-                <Button x:Name="btnDelete" Text="Delete" />
+                <Button x:Name="btnUpdate" Text="Update" Clicked="btnUpdate_Clicked" />
+                <Button x:Name="btnDelete" Text="Delete" Clicked="btnDelete_Clicked" />
             </StackLayout>
         </StackLayout>
     </ContentPage.Content>
