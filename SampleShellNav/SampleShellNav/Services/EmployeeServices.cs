@@ -2,6 +2,7 @@
 using SampleShellNav.Models;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
@@ -47,6 +48,23 @@ namespace SampleShellNav.Services
                 var response = await _client.PostAsync(uriPost, content);
                 if (!response.IsSuccessStatusCode)
                     throw new Exception("Gagal tambah data");
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
+        public async Task UpdateData(Employee emp)
+        {
+            var uriPut = new Uri($"{RestUrl}api/Employee");
+            try
+            {
+                var json = JsonConvert.SerializeObject(emp);
+                var content = new StringContent(json, Encoding.UTF8, "application/json");
+                var response = await _client.PutAsync(uriPut, content);
+                if (!response.IsSuccessStatusCode)
+                    throw new Exception("Gagal update data");
             }
             catch (Exception ex)
             {

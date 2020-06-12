@@ -1,4 +1,5 @@
-﻿using SampleShellNav.Services;
+﻿using SampleShellNav.Models;
+using SampleShellNav.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -35,6 +36,18 @@ namespace SampleShellNav
         {
             lvEmployee.ItemsSource = await _empService.GetData();
             lvEmployee.IsRefreshing = false;
+        }
+
+        private async void lvEmployee_ItemSelected(object sender, SelectedItemChangedEventArgs e)
+        {
+            if (e.SelectedItem == null)
+                return;
+
+            var empDetail = (Employee)e.SelectedItem;
+
+            EditEmployeeServicesPage editEmp = new EditEmployeeServicesPage();
+            editEmp.BindingContext = empDetail;
+            await Navigation.PushAsync(editEmp);
         }
     }
 }
