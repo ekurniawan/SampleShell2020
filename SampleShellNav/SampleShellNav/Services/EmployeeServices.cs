@@ -71,5 +71,20 @@ namespace SampleShellNav.Services
                 throw new Exception(ex.Message);
             }
         }
+
+        public async Task DeleteData(string id)
+        {
+            var uriDelete = new Uri($"{RestUrl}api/Employee/{id}");
+            try
+            {
+                var response = await _client.DeleteAsync(uriDelete);
+                if (!response.IsSuccessStatusCode)
+                    throw new Exception("Gagal delete data");
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
     }
 }

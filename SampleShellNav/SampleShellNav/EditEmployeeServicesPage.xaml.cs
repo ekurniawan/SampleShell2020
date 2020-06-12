@@ -44,9 +44,22 @@ namespace SampleShellNav
             }
         }
 
-        private void btnDelete_Clicked(object sender, EventArgs e)
+        private async void btnDelete_Clicked(object sender, EventArgs e)
         {
-
+            try
+            {
+                var result = await DisplayAlert("Konfirmasi", $"Apakah anda yakin akan mendelete data?", "OK", "Cancel");
+                if (result)
+                {
+                    await _empServices.DeleteData(entryEmpID.Text);
+                    await DisplayAlert("Keterangan", "Data berhasil di delete", "OK");
+                    await Navigation.PopAsync();
+                }
+            }
+            catch (Exception ex)
+            {
+                await DisplayAlert("Error", ex.Message, "OK");
+            }
         }
     }
 }
