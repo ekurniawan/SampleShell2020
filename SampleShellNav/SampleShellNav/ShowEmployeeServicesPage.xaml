@@ -8,7 +8,7 @@
     <ContentPage.Content>
         <StackLayout>
             <ListView x:Name="lvEmployee" HasUnevenRows="True" 
-                      Header="Employee" 
+                      Header="Employee" IsPullToRefreshEnabled="True" Refreshing="lvEmployee_Refreshing"
                       Footer="Footer">
                 <ListView.HeaderTemplate>
                     <DataTemplate>

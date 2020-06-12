@@ -30,5 +30,11 @@ namespace SampleShellNav
         {
             await Navigation.PushAsync(new AddEmployeeServicesPage());
         }
+
+        private async void lvEmployee_Refreshing(object sender, EventArgs e)
+        {
+            lvEmployee.ItemsSource = await _empService.GetData();
+            lvEmployee.IsRefreshing = false;
+        }
     }
 }
