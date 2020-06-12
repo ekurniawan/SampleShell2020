@@ -36,5 +36,22 @@ namespace SampleShellNav.Services
                 throw new Exception(ex.Message);
             }
         }
+
+        public async Task InsertData(Employee emp)
+        {
+            var uriPost = new Uri($"{RestUrl}api/Employee");
+            try
+            {
+                var json = JsonConvert.SerializeObject(emp);
+                var content = new StringContent(json, Encoding.UTF8, "application/json");
+                var response = await _client.PostAsync(uriPost, content);
+                if (!response.IsSuccessStatusCode)
+                    throw new Exception("Gagal tambah data");
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
     }
 }

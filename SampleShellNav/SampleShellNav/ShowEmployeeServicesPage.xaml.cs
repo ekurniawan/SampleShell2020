@@ -26,9 +26,9 @@ namespace SampleShellNav
             lvEmployee.ItemsSource = await _empService.GetData();
         }
 
-        private void btnAdd_Clicked(object sender, EventArgs e)
+        private async void btnAdd_Clicked(object sender, EventArgs e)
         {
-
+            await Navigation.PushAsync(new AddEmployeeServicesPage());
         }
     }
 }
