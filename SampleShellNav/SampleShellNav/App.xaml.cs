@@ -23,7 +23,7 @@ namespace SampleShellNav
             InitializeComponent();
 
             //MainPage = new AppShell();
-            MainPage = new NavigationPage(new ShowEmployee());
+            MainPage = new NavigationPage(new ShowEmployeeServicesPage());
         }
 
         protected override void OnStart()

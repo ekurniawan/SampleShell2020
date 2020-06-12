@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" Title="Show"
+             x:Class="SampleShellNav.ShowEmployeeServicesPage">
+    <ContentPage.Content>
+        <StackLayout>
+            <ListView x:Name="lvEmployee" HasUnevenRows="True" 
+                      Header="Employee" 
+                      Footer="Footer">
+                <ListView.HeaderTemplate>
+                    <DataTemplate>
+                        <StackLayout Orientation="Horizontal" BackgroundColor="Blue" Padding="5,5,5,5">
+                            <Label Text="Emp Name" FontSize="Medium" FontAttributes="Bold" TextColor="White"/>
+                            <Label Text="Designation" FontSize="Medium" FontAttributes="Bold" TextColor="White"/>
+                            <Label Text="Department" FontSize="Medium" FontAttributes="Bold" TextColor="White"/>
+                        </StackLayout>
+                    </DataTemplate>
+                </ListView.HeaderTemplate>
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Orientation="Horizontal" Padding="5,5,5,5">
+                                <Label Text="{Binding EmpName}" FontSize="Medium" />
+                                <Label Text="{Binding Designation}" FontSize="Medium" />
+                                <Label Text="{Binding Department}" FontSize="Medium" />
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+                <ListView.FooterTemplate>
+                    <DataTemplate>
+                        <StackLayout Orientation="Horizontal" Padding="5,5,5,5">
+                            <Button x:Name="btnAdd" Text="Add New Employee" 
+                                    Clicked="btnAdd_Clicked" />
+                        </StackLayout>
+                    </DataTemplate>
+                </ListView.FooterTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
